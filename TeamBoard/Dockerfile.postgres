@@ -1,0 +1,18 @@
+# PostgreSQL image for local/dev usage.
+# Note: Do NOT bake credentials into the image.
+# Provide POSTGRES_PASSWORD (and optionally POSTGRES_DB/POSTGRES_USER) at runtime.
+
+FROM postgres:16-alpine
+
+# Optional defaults (safe to override at runtime)
+ENV POSTGRES_DB=teamboard \
+    POSTGRES_USER=teamboard
+
+EXPOSE 5432
+
+# Data directory (also declared by the upstream image)
+VOLUME ["/var/lib/postgresql/data"]
+
+# Simple healthcheck; requires POSTGRES_PASSWORD to be set at runtime.
+HEALTHCHECK --interval=10s --timeout=5s --start-period=20s --retries=5 \
+  CMD pg_isready -U "$POSTGRES_USER" -d "$POSTGRES_DB" || exit 1
