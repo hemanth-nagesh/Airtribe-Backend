@@ -9,13 +9,19 @@ https://docs.djangoproject.com/en/6.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
-
+import os
 from pathlib import Path
-
+try:
+    from dotenv import load_dotenv
+except ImportError:
+    load_dotenv = None
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+if load_dotenv:
+    # Support both EventHub/.env and workspace-root .env files.
+    load_dotenv(BASE_DIR / '.env')
+    load_dotenv(BASE_DIR.parent / '.env')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
@@ -37,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'api.apps.ApiConfig'
 ]
 
 MIDDLEWARE = [
@@ -68,16 +76,44 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'teamboard.wsgi.application'
 
+# JWT Authentication settings
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+USE_SUPABASE_DB = os.getenv('USE_SUPABASE_DB', 'false').lower() == 'true'
+
+if USE_SUPABASE_DB and os.getenv('SUPABASE_DB_HOST'):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.getenv('SUPABASE_DB_NAME', 'postgres'),
+            'USER': os.getenv('SUPABASE_DB_USER'),
+            'PASSWORD': os.getenv('SUPABASE_DB_PASSWORD'),
+            'HOST': os.getenv('SUPABASE_DB_HOST'),
+            'PORT': os.getenv('SUPABASE_DB_PORT', '5432'),
+            'CONN_MAX_AGE': 0,
+            'OPTIONS': {
+                'sslmode': os.getenv('SUPABASE_DB_SSLMODE', 'require'),
+                'connect_timeout': int(os.getenv('SUPABASE_CONNECT_TIMEOUT', '10')),
+            },
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 
 # Password validation
