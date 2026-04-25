@@ -17,9 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from TeamBoard import api
-
+# import api.urls as urls
+# TeamBoard/api/urls.py
 urlpatterns = [
     path('admin/', admin.site.urls),
-    include('api/', api.urls),
+    path('api/', include('api.urls')),
 ]
