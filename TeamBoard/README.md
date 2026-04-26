@@ -269,7 +269,7 @@ If you have an exported Postman collection file, you can import it in Postman:
 
 This repo currently contains a sample export file:
 
-- `TeamBoard/postman_collection.json`
+- `postman_collection.json`
 
 ---
 
