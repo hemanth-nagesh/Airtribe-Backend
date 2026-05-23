@@ -17,8 +17,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Add third-party apps here (e.g., rest_framework)
-    'user',  # Our custom user app
-    'user.apps.UserConfig',  # Ensure the app config is included for signals
+    # Our custom user app (AppConfig ensures signals are wired via ready())
+    'user.apps.UserConfig',
 ]
 
 MIDDLEWARE = [
@@ -95,7 +95,7 @@ CELERY_TASK_SERIALIZER = 'json'
 #     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
 #     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
 # }
-rest_framework = {
+REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),

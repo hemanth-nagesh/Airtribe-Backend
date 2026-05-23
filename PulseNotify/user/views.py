@@ -1,5 +1,3 @@
-from pickle import GET
-
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.models import User
 from django.db.models import Count, Q
@@ -8,12 +6,14 @@ from rest_framework.decorators import api_view, authentication_classes, permissi
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
-import requests
 from .models import UserProfile, priceAlert, notification
 from .serializers import PriceAlertSerializer
 from .permissions import IsAdminUser
+import requests
+import os
 
-@api_view(['POST'], path='auth/register/')
+
+@api_view(['POST'])
 @permission_classes([])  # Allow anyone to access the registration endpoint
 @authentication_classes([])  # Disable authentication for this view
 def register_user(request):
@@ -52,8 +52,7 @@ def register_user(request):
     }, status=status.HTTP_201_CREATED)
 
 
-
-@api_view(['POST'],path='auth/login/')
+@api_view(['POST'])
 @permission_classes([])  # Allow anyone to access the registration endpoint
 @authentication_classes([])  # Disable authentication for this view
 def login(request):
@@ -89,7 +88,8 @@ def login(request):
         }
     }, status=status.HTTP_200_OK)
 
-@api_view(['GET', 'DELETE'], path='alerts/')
+# ViewSet for managing Price Alerts
+
 class PriceAlertViewSet(viewsets.ModelViewSet):
     serializer_class = PriceAlertSerializer
     permission_classes = [IsAuthenticated]
@@ -100,6 +100,14 @@ class PriceAlertViewSet(viewsets.ModelViewSet):
         Returns an empty list if the user has no alerts.
         """
         return priceAlert.objects.filter(user=self.request.user)
+
+    def perform_create(self, serializer):
+        # Always attach the authenticated user; never allow NULL/other user.
+        serializer.save(user=self.request.user)
+
+    def perform_update(self, serializer):
+        # Prevent user reassignment via PUT/PATCH.
+        serializer.save(user=self.request.user)
     
     def destroy(self, request, pk=None):
         """
@@ -116,8 +124,8 @@ class PriceAlertViewSet(viewsets.ModelViewSet):
             )
         
         # Set status to INACTIVE instead of deleting
-        alert.status = 'inactive'
-        alert.save()
+        alert.status = priceAlert.Status.INACTIVE
+        alert.save(update_fields=['status'])
         
         return Response(
             {'status': 'inactive'}, 
@@ -169,15 +177,37 @@ def admin_summary(request):
         'top_routes': formatted_routes
     }, status=status.HTTP_200_OK)
 
-# @api_view(['GET'], path='flights/price/<str:route>/')
-# def get_flight_price(request, route):
-#     Response = requests.get(
-#         'http://localhost:8001/api/flights/price/',
-#         params={'route': route}
-#     )
-#     data = Response.json()
-#     if Response.status_code == 200:
-#         return Response(data, status=status.HTTP_200_OK)
-#     else:
-#         return Response(data, status=Response.status_code)
+@api_view(['GET'])
+@permission_classes([AllowAny])
+@authentication_classes([])
+def get_flight_price(request, route=None):
+    # Support both:
+    # - /api/flights/price/?route=DEL-BOM
+    # - /api/flights/price/DEL-BOM/
+    route = route or request.query_params.get('route')
+    if not route:
+        return Response({'error': 'route is required'}, status=status.HTTP_400_BAD_REQUEST)
+
+    price_server_url = os.environ.get(
+        'FLIGHT_PRICE_SERVER_URL',
+        'http://127.0.0.1:8080/api/flights/price/',
+    )
+
+    try:
+        resp = requests.get(
+            price_server_url,
+            params={'route': route},
+            timeout=10,
+        )
+    except requests.RequestException:
+        return Response(
+            {'error': 'Price server unavailable'},
+            status=status.HTTP_503_SERVICE_UNAVAILABLE,
+        )
+    try:
+        data = resp.json()
+    except Exception:
+        data = {'error': 'Invalid response from price server'}
+
+    return Response(data, status=resp.status_code)
 

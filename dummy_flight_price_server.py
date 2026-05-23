@@ -70,10 +70,10 @@ class FlightPriceHandler(BaseHTTPRequestHandler):
 
 
 if __name__ == '__main__':
-    server_address = ('', 8000)
+    server_address = ('', 8080)
     httpd = HTTPServer(server_address, FlightPriceHandler)
-    print("🚀 Dummy Flight Price Server started on http://localhost:8000")
-    print("📍 Endpoint: http://localhost:8000/api/flights/price/?route=del-bom")
+    print("🚀 Dummy Flight Price Server started on http://127.0.0.1:8080")
+    print("📍 Endpoint: http://127.0.0.1:8080/api/flights/price/?route=del-bom")
     print("\nAvailable routes:")
     for route in MOCK_PRICES.keys():
         price_range = MOCK_PRICES[route]

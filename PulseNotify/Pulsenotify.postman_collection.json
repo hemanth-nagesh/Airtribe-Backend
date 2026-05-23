@@ -1,0 +1,1541 @@
+{
+  "info": {
+    "_postman_id": "ea090365-a2e0-4fa7-9a9f-50cca2c87ec1",
+    "name": "Pulsenotify",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "12686766"
+  },
+  "item": [
+    {
+      "name": "flight__price_external_server",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/flights/price/?route=del-bom",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "flights",
+            "price",
+            ""
+          ],
+          "query": [
+            {
+              "key": "route",
+              "value": "del-bom"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register a new user",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"nagesh\",\n    \"password\": \"pass@123\",\n    \"email\": \"nagesh@gmail.com\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/auth/register/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "auth",
+            "register",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Register a new user",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"nagesh\",\n    \"password\": \"pass@123\",\n    \"email\": \"nagesh@gmail.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/auth/register/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "auth",
+                "register",
+                ""
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sat, 23 May 2026 08:11:12 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.14.5"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept"
+            },
+            {
+              "key": "Allow",
+              "value": "OPTIONS, POST"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "533"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"username\": \"nagesh\",\n    \"role\": \"user\",\n    \"token\": {\n        \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3OTYxMDI3MiwiaWF0IjoxNzc5NTIzODcyLCJqdGkiOiIwNDQyMDEyMWI5OWY0YWQ0OWU1YTAxY2NiNTA2MmVjMiIsInVzZXJfaWQiOiIyIn0.liP_T1BA_s3A8hF_Q4t5z3DNF0pYAkRFAJqM0M1Oq_w\",\n        \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NTI0MTcyLCJpYXQiOjE3Nzk1MjM4NzIsImp0aSI6IjIyMTQwOTE2ODVlNDQzOTc4ZmNlNjMzNWE0ZTVmMzhlIiwidXNlcl9pZCI6IjIifQ.N-hMvS8fZEPL3qoTHDDGIFctiBYsydctZAVJ9BQWAPE\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Register with duplicate username",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"hemanth\",\n    \"password\": \"pass@123\",\n    \"email\": \"hemanth@gmail.com\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/auth/register/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "auth",
+            "register",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Register with duplicate username",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"hemanth\",\n    \"password\": \"pass@123\",\n    \"email\": \"hemanth@gmail.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/auth/register/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "auth",
+                "register",
+                ""
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sat, 23 May 2026 08:11:42 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.14.5"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept"
+            },
+            {
+              "key": "Allow",
+              "value": "OPTIONS, POST"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "36"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"Username already exists.\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Login with valid credentials",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"hemanth\",\n    \"password\": \"pass@123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/auth/login/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "auth",
+            "login",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Login with valid credentials",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"hemanth\",\n    \"password\": \"pass@123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/auth/login/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "auth",
+                "login",
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sat, 23 May 2026 08:12:03 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.14.5"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept"
+            },
+            {
+              "key": "Allow",
+              "value": "OPTIONS, POST"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "534"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"username\": \"hemanth\",\n    \"role\": \"user\",\n    \"token\": {\n        \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3OTYxMDMyMywiaWF0IjoxNzc5NTIzOTIzLCJqdGkiOiI0YzczYzY5MTA1YjU0OTdiYTM2MGZmODVhYTQ3MTgxOCIsInVzZXJfaWQiOiIxIn0.-OFModSDBbsaFrXaHqeARnwmUFeSpSxTw1dvnK-QxYo\",\n        \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NTI0MjIzLCJpYXQiOjE3Nzk1MjM5MjMsImp0aSI6IjVmNDA3ZDVkNDdmOTQyZGVhY2QyZDRjMGVhYjNjNGY1IiwidXNlcl9pZCI6IjEifQ.N2VOVOboVPy_d_3gZUvGCC4JGXbhA5MU_BFpgnz-3uQ\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Login with valid credentials Copy",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"hemanth\",\n    \"password\": \"pass@123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/auth/login/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "auth",
+            "login",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Login with valid credentials",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"hemanth\",\n    \"password\": \"pass@123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/auth/login/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "auth",
+                "login",
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sat, 23 May 2026 08:12:03 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.14.5"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept"
+            },
+            {
+              "key": "Allow",
+              "value": "OPTIONS, POST"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "534"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"username\": \"hemanth\",\n    \"role\": \"user\",\n    \"token\": {\n        \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3OTYxMDMyMywiaWF0IjoxNzc5NTIzOTIzLCJqdGkiOiI0YzczYzY5MTA1YjU0OTdiYTM2MGZmODVhYTQ3MTgxOCIsInVzZXJfaWQiOiIxIn0.-OFModSDBbsaFrXaHqeARnwmUFeSpSxTw1dvnK-QxYo\",\n        \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NTI0MjIzLCJpYXQiOjE3Nzk1MjM5MjMsImp0aSI6IjVmNDA3ZDVkNDdmOTQyZGVhY2QyZDRjMGVhYjNjNGY1IiwidXNlcl9pZCI6IjEifQ.N2VOVOboVPy_d_3gZUvGCC4JGXbhA5MU_BFpgnz-3uQ\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Login with wrong credentials",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"hemanth\",\n    \"password\": \"pass@\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/auth/login/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "auth",
+            "login",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Login with wrong credentials",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"hemanth\",\n    \"password\": \"pass@\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/auth/login/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "auth",
+                "login",
+                ""
+              ]
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sat, 23 May 2026 08:12:21 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.14.5"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept"
+            },
+            {
+              "key": "Allow",
+              "value": "OPTIONS, POST"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "41"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"Invalid username or password.\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Create a price alert no token",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/alerts/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "alerts",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Create a price alert no token",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/alerts/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "alerts",
+                ""
+              ]
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sat, 23 May 2026 08:12:40 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.14.5"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "WWW-Authenticate",
+              "value": "Bearer realm=\"api\""
+            },
+            {
+              "key": "Vary",
+              "value": "Accept"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, POST, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "58"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"detail\": \"Authentication credentials were not provided.\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Create a price alert valid token",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NTI0Mjg2LCJpYXQiOjE3Nzk1MjM5ODYsImp0aSI6ImM1ZmUwNDBlZmJkODQ1NDI4NWQ2ZTk5MDFiNmQxOTFlIiwidXNlcl9pZCI6IjEifQ.Q0_88D8Ph76zi0sHz5vx8tIpEpceiAmoasV3A477_2g",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"orign\" : \"bel\",\n    \"destination\" : \"hyd\",\n    \"treshold_price\" : 2000\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/alerts/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "alerts",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Create a price alert valid token",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NTI0Mjg2LCJpYXQiOjE3Nzk1MjM5ODYsImp0aSI6ImM1ZmUwNDBlZmJkODQ1NDI4NWQ2ZTk5MDFiNmQxOTFlIiwidXNlcl9pZCI6IjEifQ.Q0_88D8Ph76zi0sHz5vx8tIpEpceiAmoasV3A477_2g",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"orign\" : \"bel\",\n    \"destination\" : \"hyd\",\n    \"treshold_price\" : 2000\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/alerts/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "alerts",
+                ""
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sat, 23 May 2026 08:13:23 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.14.5"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, POST, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "130"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 5,\n    \"orign\": \"bel\",\n    \"destination\": \"hyd\",\n    \"treshold_price\": \"2000.00\",\n    \"status\": \"active\",\n    \"created_at\": \"2026-05-23T08:13:23.940149Z\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Mock price feed valid route",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NTIzMzUyLCJpYXQiOjE3Nzk1MjMwNTIsImp0aSI6IjkyN2IyMWY4OTk1ZjRlZTc4NWIxNTJkNjA4Yzk2NGZlIiwidXNlcl9pZCI6IjEifQ.BtfRg1knVxphCjpaBTPoy1lEaENGNKSDLFMlcSmqeoA",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"orign\" : \"bel\",\n    \"destination\" : \"hyd\",\n    \"treshold_price\" : 2000\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/flights/price/?route=del-bom",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "flights",
+            "price",
+            ""
+          ],
+          "query": [
+            {
+              "key": "route",
+              "value": "del-bom"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Mock price feed valid route",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NTIzMzUyLCJpYXQiOjE3Nzk1MjMwNTIsImp0aSI6IjkyN2IyMWY4OTk1ZjRlZTc4NWIxNTJkNjA4Yzk2NGZlIiwidXNlcl9pZCI6IjEifQ.BtfRg1knVxphCjpaBTPoy1lEaENGNKSDLFMlcSmqeoA",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"orign\" : \"bel\",\n    \"destination\" : \"hyd\",\n    \"treshold_price\" : 2000\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/flights/price/?route=del-bom",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "flights",
+                "price",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "route",
+                  "value": "del-bom"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sat, 23 May 2026 08:03:23 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.14.5"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept"
+            },
+            {
+              "key": "Allow",
+              "value": "OPTIONS, GET"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "32"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"route\": \"del-bom\",\n    \"price\": 5315\n}"
+        }
+      ]
+    },
+    {
+      "name": "Mock price feed invalid route",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NTIzODA4LCJpYXQiOjE3Nzk1MjM1MDgsImp0aSI6IjdmNDYwZDBmMjgzMzRiMDk5YzY4MjA0YWNhM2E2MDdhIiwidXNlcl9pZCI6IjEifQ.CxTBBoJQrxyRmA2fyqRbna5YSjnkJ0Wivwo-hkmpdU4",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/flights/price/?route=del-goa",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "flights",
+            "price",
+            ""
+          ],
+          "query": [
+            {
+              "key": "route",
+              "value": "del-goa"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Mock price feed invalid route",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NTIzODA4LCJpYXQiOjE3Nzk1MjM1MDgsImp0aSI6IjdmNDYwZDBmMjgzMzRiMDk5YzY4MjA0YWNhM2E2MDdhIiwidXNlcl9pZCI6IjEifQ.CxTBBoJQrxyRmA2fyqRbna5YSjnkJ0Wivwo-hkmpdU4",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8000/api/flights/price/?route=del-goa",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "flights",
+                "price",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "route",
+                  "value": "del-goa"
+                }
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sat, 23 May 2026 08:06:16 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.14.5"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept"
+            },
+            {
+              "key": "Allow",
+              "value": "OPTIONS, GET"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "39"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"Route \\\"del-goa\\\" not found\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Deactivate an alert",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NTIyMTA0LCJpYXQiOjE3Nzk1MjE4MDQsImp0aSI6ImVlMWI3NDM5NDY1NjRmYTY5ZTUwYTZhMDQzNzU0ODE1IiwidXNlcl9pZCI6IjEifQ.RFtCTZmevpwEE6gitfB27XJdUCeVmUzXftdxbdYpDsM",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/alerts/2/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "alerts",
+            "2",
+            ""
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "2",
+              "type": "text",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Deactivate an alert",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NTIyMTA0LCJpYXQiOjE3Nzk1MjE4MDQsImp0aSI6ImVlMWI3NDM5NDY1NjRmYTY5ZTUwYTZhMDQzNzU0ODE1IiwidXNlcl9pZCI6IjEifQ.RFtCTZmevpwEE6gitfB27XJdUCeVmUzXftdxbdYpDsM",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8000/api/alerts/2/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "alerts",
+                "2",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "2",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sat, 23 May 2026 07:37:08 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.14.5"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "21"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"inactive\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "List own alerts",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NTIzODA4LCJpYXQiOjE3Nzk1MjM1MDgsImp0aSI6IjdmNDYwZDBmMjgzMzRiMDk5YzY4MjA0YWNhM2E2MDdhIiwidXNlcl9pZCI6IjEifQ.CxTBBoJQrxyRmA2fyqRbna5YSjnkJ0Wivwo-hkmpdU4",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"orign\" : \"bel\",\n    \"destination\" : \"bom\",\n    \"treshold_price\" : 4000\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/alerts/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "alerts",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "List own alerts",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NTIzODA4LCJpYXQiOjE3Nzk1MjM1MDgsImp0aSI6IjdmNDYwZDBmMjgzMzRiMDk5YzY4MjA0YWNhM2E2MDdhIiwidXNlcl9pZCI6IjEifQ.CxTBBoJQrxyRmA2fyqRbna5YSjnkJ0Wivwo-hkmpdU4",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"orign\" : \"bel\",\n    \"destination\" : \"bom\",\n    \"treshold_price\" : 4000\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/alerts/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "alerts",
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sat, 23 May 2026 08:07:04 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.14.5"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, POST, HEAD, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "396"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 2,\n        \"orign\": \"bel\",\n        \"destination\": \"bom\",\n        \"treshold_price\": \"4000.00\",\n        \"status\": \"inactive\",\n        \"created_at\": \"2026-05-23T05:32:02.852401Z\"\n    },\n    {\n        \"id\": 3,\n        \"orign\": \"bel\",\n        \"destination\": \"goa\",\n        \"treshold_price\": \"4000.00\",\n        \"status\": \"active\",\n        \"created_at\": \"2026-05-23T05:34:55.355233Z\"\n    },\n    {\n        \"id\": 4,\n        \"orign\": \"bel\",\n        \"destination\": \"hyd\",\n        \"treshold_price\": \"2000.00\",\n        \"status\": \"active\",\n        \"created_at\": \"2026-05-23T05:35:18.789186Z\"\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Admin summary regular user token",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NTI0NDk0LCJpYXQiOjE3Nzk1MjQxOTQsImp0aSI6ImY0NTJlZTZjOTkyYjQ0ZDViOTIxMmUwMzUwMTkyMGNkIiwidXNlcl9pZCI6IjIifQ.doddNmORcMFELICaz4ykZsAqK62AFTiYXE47WzlhOrw",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"orign\" : \"bel\",\n    \"destination\" : \"bom\",\n    \"treshold_price\" : 4000\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/admin/summary/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "admin",
+            "summary",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Admin summary regular user token",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NTI0NDk0LCJpYXQiOjE3Nzk1MjQxOTQsImp0aSI6ImY0NTJlZTZjOTkyYjQ0ZDViOTIxMmUwMzUwMTkyMGNkIiwidXNlcl9pZCI6IjIifQ.doddNmORcMFELICaz4ykZsAqK62AFTiYXE47WzlhOrw",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"orign\" : \"bel\",\n    \"destination\" : \"bom\",\n    \"treshold_price\" : 4000\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/admin/summary/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "admin",
+                "summary",
+                ""
+              ]
+            }
+          },
+          "status": "Forbidden",
+          "code": 403,
+          "_postman_previewlanguage": "",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sat, 23 May 2026 08:17:32 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.14.5"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept"
+            },
+            {
+              "key": "Allow",
+              "value": "OPTIONS, GET"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "63"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "domain": "",
+              "path": ""
+            }
+          ],
+          "body": "{\n    \"detail\": \"You do not have permission to perform this action.\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Admin summary - admin token",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NTI3NDU4LCJpYXQiOjE3Nzk1MjcxNTgsImp0aSI6ImU2ZWZiY2NlMDQwOTQzZmRhZTM5ZTUwNDc1MzA2MjZjIiwidXNlcl9pZCI6IjEifQ.V0_kQFliGHG2ScBsNUO-aPq_dzoaP8IPUUkDJXf7JFo",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"orign\" : \"bel\",\n    \"destination\" : \"bom\",\n    \"treshold_price\" : 4000\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/admin/summary/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "admin",
+            "summary",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Admin summary - admin token",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5NTI3NDU4LCJpYXQiOjE3Nzk1MjcxNTgsImp0aSI6ImU2ZWZiY2NlMDQwOTQzZmRhZTM5ZTUwNDc1MzA2MjZjIiwidXNlcl9pZCI6IjEifQ.V0_kQFliGHG2ScBsNUO-aPq_dzoaP8IPUUkDJXf7JFo",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"orign\" : \"bel\",\n    \"destination\" : \"bom\",\n    \"treshold_price\" : 4000\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/admin/summary/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "admin",
+                "summary",
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Sat, 23 May 2026 09:06:08 GMT"
+            },
+            {
+              "key": "Server",
+              "value": "WSGIServer/0.2 CPython/3.14.5"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept"
+            },
+            {
+              "key": "Allow",
+              "value": "GET, OPTIONS"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Length",
+              "value": "204"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "same-origin"
+            },
+            {
+              "key": "Cross-Origin-Opener-Policy",
+              "value": "same-origin"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"total_alerts\": 4,\n    \"active_alerts\": 3,\n    \"triggered_alerts\": 0,\n    \"total_notifications\": 0,\n    \"top_routes\": [\n        {\n            \"route\": \"bel-hyd\",\n            \"alert_count\": 2\n        },\n        {\n            \"route\": \"bel-goa\",\n            \"alert_count\": 1\n        },\n        {\n            \"route\": \"bel-bom\",\n            \"alert_count\": 1\n        }\n    ]\n}"
+        }
+      ]
+    }
+  ]
+}

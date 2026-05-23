@@ -13,5 +13,5 @@ class IsAdminUser(BasePermission):
             request.user 
             and request.user.is_authenticated 
             and hasattr(request.user, 'profile')
-            and request.user.profile.role == UserProfile.role.ADMIN
+            and request.user.profile.role == UserProfile.Role.ADMIN
         )
