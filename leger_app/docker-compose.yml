@@ -1,0 +1,26 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: subledger
+      POSTGRES_PASSWORD: subledger
+      POSTGRES_DB: subledger
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://subledger:subledger@db:5432/subledger
+      APP_ENV: development
+      DEBUG: "true"
+      SECRET_KEY: change-me-in-production
+    depends_on:
+      - db
+
+volumes:
+  pgdata:
